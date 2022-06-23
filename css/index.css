@@ -1,444 +1,874 @@
 * {
-  user-select: none;
-font-family: Helvetica;
+	user-select: none;
+	font-family: Helvetica;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
+html,
+body {
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
 }
 
-#canvas, .page {
-  position: absolute;
-  top: 0;
-  left: 0;
+#canvas,
+.page {
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 #canvas {
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
 }
 
 .page {
-  width: calc(100vw - 40px);
-  height: calc(100vh - 40px);
-  margin: 0;
-  padding: 20px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s;
-  z-index: 0;
+	width: calc(100vw - 40px);
+	height: calc(100vh - 40px);
+	margin: 0;
+	padding: 20px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s;
+	z-index: 0;
 }
 
 .opaque {
-  opacity: 1 !important;
+	opacity: 1 !important;
 }
 .visible {
-  visibility: visible !important;
+	visibility: visible !important;
 }
 
 #menuPage {
-  background-color: #406080;//#e0f0ff;
+	background-color: #406080; //#e0f0ff;
 }
 #explorePage {
-  background-color: #f0f0f0;
-//  -webkit-mask-image: linear-gradient(black 80%, transparent 95%);
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
+	background-color: #f0f0f0;
+	//  -webkit-mask-image: linear-gradient(black 80%, transparent 95%);
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: center;
 }
 #tinkerPage {
-
 }
 #tinkerPage > .titleBar {
-  position: relative;
-  width: 100%;
-  height: 50px;
-  padding: 13px 0;
-  font-size: 24px;
-  text-align: center;
+	position: relative;
+	width: 100%;
+	height: 50px;
+	padding: 13px 0;
+	font-size: 24px;
+	text-align: center;
 }
 #tinkerPage > .codingSpace {
-  position: relative;
-  width: 100%;
-  height: calc(100% - 76px);
-background-color: #ffefff;
+	position: relative;
+	width: 100%;
+	height: calc(100% - 76px);
+	background-color: #ffefff;
 
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  align-items: center;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: center;
 }
 #tinkerPage .blockSpace {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  box-shadow: 1px 0 2px black;
-  min-width: 620px;
-  min-height: 50%;
+	position: relative;
+	width: 50%;
+	height: 100%;
+	box-shadow: 1px 0 2px black;
+	min-width: 620px;
+	min-height: 50%;
 
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
 }
 #tinkerPage .blockMenuCont {
-  position: relative;
-  width: 55px;
-  height: 100%;
-  display: inline-flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  box-shadow: 1px 0 2px black;
+	position: relative;
+	width: 55px;
+	height: 100%;
+	display: inline-flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	box-shadow: 1px 0 2px black;
 }
 #tinkerPage .blockMenuItem {
-  position: relative;
-  width: 100%;
-  height: 60px;
-//  margin: 5px 0;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+	position: relative;
+	width: 100%;
+	height: 60px;
+	//  margin: 5px 0;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
 }
 #tinkerPage .blockMenuItem:hover {
-  cursor: pointer;
-  background-color: #c9b6c9;
+	cursor: pointer;
+	background-color: #c9b6c9;
 }
 .blockMenuItemCircle {
-  position: relative;
-  width: 25px;
-  height: 25px;
-  border-radius: 25px;
-  box-shadow: inset 0 0 3px black;
+	position: relative;
+	width: 25px;
+	height: 25px;
+	border-radius: 25px;
+	box-shadow: inset 0 0 3px black;
 }
 .blockMenuItem > a {
-  font-size: 12px;
-  margin: 3px 0 0 0;
+	font-size: 12px;
+	margin: 3px 0 0 0;
 }
 #tinkerPage .blockCont {
-  position: relative;
-  width: 230px;
-  height: 100%;
-  padding: 0 0 0 10px;
-  display: inline-flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  overflow-y: scroll;
-//  overflow-x: hidden;
-  box-shadow: inset 0 0 3px black;
+	position: relative;
+	width: 230px;
+	height: 100%;
+	padding: 0 0 0 10px;
+	display: inline-flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	overflow-y: scroll;
+	//  overflow-x: hidden;
+	box-shadow: inset 0 0 3px black;
 }
 #tinkerPage .blockStage {
-
 }
 #tinkerPage .hardwareMenu {
-
 }
 #tinkerPage .hardwareStage {
-
 }
 
-#questPage {
-  background-color: #f0e0f0;
-}
 #environmentPage {
-//  background-color: #f0f0e0;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
+	//  background-color: #f0f0e0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .envButton {
-  position: relative;
-  width: 100px;
-  height: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+	position: relative;
+	width: 100px;
+	height: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
 }
 .envButton:hover > .arrowBox {
-  top: -5px;
+	top: -5px;
 }
 .envButton:hover > .arrowBox::before {
-  box-shadow: -2px -2px 5px #434146;
+	box-shadow: -2px -2px 5px #434146;
 }
 .envButton:hover > .arrowBox::after {
-  box-shadow: 2px -2px 5px #434146;
+	box-shadow: 2px -2px 5px #434146;
 }
 .envButton:active > .arrowBox {
-  top: 0;
+	top: 0;
 }
 .envButton:active > .arrowBox::before {
-  box-shadow: none;
+	box-shadow: none;
 }
 .envButton:active > .arrowBox::after {
-  box-shadow: none;
+	box-shadow: none;
 }
 .envButton > .arrowBox {
-  position: relative;
-  width: 0;
-  height: 0;
-  top: 0;
-  left: 0;
-  transition: top 0.2s;
+	position: relative;
+	width: 0;
+	height: 0;
+	top: 0;
+	left: 0;
+	transition: top 0.2s;
 }
 .envButton > .arrowBox::before,
 .envButton > .arrowBox::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 80px;
-  height: 20px;
-  background-color: black;
-  transition: box-shadow 0.2s;
+	content: "";
+	position: absolute;
+	top: 0;
+	width: 80px;
+	height: 20px;
+	background-color: black;
+	transition: box-shadow 0.2s;
 }
 .envButton > .arrowBox::before {
-  transform: rotate(45deg);
-  left: -21.5px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+	transform: rotate(45deg);
+	left: -21.5px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
 }
 .envButton > .arrowBox::after {
-  transform: rotate(-45deg);
-  left: 21.5px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+	transform: rotate(-45deg);
+	left: 21.5px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 .envButton.leftSide > .arrowBox {
-  transform: rotate(90deg);
-  top: -40px;
+	transform: rotate(90deg);
+	top: -40px;
 }
 .envButton.rightSide > .arrowBox {
-  transform: rotate(-90deg);
-  top: 40px;
+	transform: rotate(-90deg);
+	top: 40px;
 }
 
 .techRow {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
 }
 
 .card {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 300px;
-  height: 230px;
-  margin: 15px;
-  border-radius: 25px;
-  border: 3px solid #edcf55;
-  background-color: #fff0e0;
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 230px;
+	margin: 15px;
+	border-radius: 25px;
+	border: 3px solid #edcf55;
+	background-color: #fff0e0;
 
-  background-position: top;
-  background-size: cover;//270px;
-  background-repeat: no-repeat;
-  background-clip: content-box;
+	background-position: top;
+	background-size: cover; //270px;
+	background-repeat: no-repeat;
+	background-clip: content-box;
 
-  cursor: pointer;
-  transition: top 0.5s, box-shadow 0.5s;
+	cursor: pointer;
+	transition: top 0.5s, box-shadow 0.5s;
 }
 .card > h1 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  min-height: 2em;
-  margin: 0;
-  border-radius: 15px;
-  border-top-right-radius: 0;
-  background-color: #edcf55;
-  color: black;
-  text-align: center;
-  z-index: 1;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	min-height: 2em;
+	margin: 0;
+	border-radius: 15px;
+	border-top-right-radius: 0;
+	background-color: #edcf55;
+	color: black;
+	text-align: center;
+	z-index: 1;
 }
 .card::before {
-  content: "";
-  position: absolute;
-  top: -55px;
-  left: 147.5px;
-  width: 5px;
-  height: 342px;
-  background-color: black;
-  z-index: -1;
-  transition: top 0.5s;
+	content: "";
+	position: absolute;
+	top: -55px;
+	left: 147.5px;
+	width: 5px;
+	height: 342px;
+	background-color: black;
+	z-index: -1;
+	transition: top 0.5s;
 }
 .card:hover {
-  top: -5px;
-  box-shadow: 0 3px 5px black;
+	top: -5px;
+	box-shadow: 0 3px 5px black;
 }
 .card:hover::before {
-  top: -50px;
+	top: -50px;
 }
 .card:active {
-  top: 0;
-  box-shadow: 0 0 black;
+	top: 0;
+	box-shadow: 0 0 black;
 }
 .card:active::before {
-  top: -55px;
+	top: -55px;
 }
 
 .techRow {
-  position: relative;
-  margin: 40px 0;
+	position: relative;
+	margin: 40px 0;
 }
 .techRow::before {
-  content: "";
-  position: absolute;
-  top: -42.5px;
-  left: 165px;
-  width: calc(100% - 330px - 1px);
-  height: 5px;
-  background-color: black;
-  z-index: -1;
+	content: "";
+	position: absolute;
+	top: -42.5px;
+	left: 165px;
+	width: calc(100% - 330px - 1px);
+	height: 5px;
+	background-color: black;
+	z-index: -1;
 }
 .techRow::after {
-  content: "";
-  position: absolute;
-  bottom: -42.5px;
-  left: 165px;
-  width: calc(100% - 330px - 1px);
-  height: 5px;
-  background-color: black;
-  z-index: -1;
+	content: "";
+	position: absolute;
+	bottom: -42.5px;
+	left: 165px;
+	width: calc(100% - 330px - 1px);
+	height: 5px;
+	background-color: black;
+	z-index: -1;
 }
 
 .lockedTechRow > .card {
-  background-blend-mode: luminosity;
-  border-color: gray;
-  cursor: not-allowed;
+	background-blend-mode: luminosity;
+	border-color: gray;
+	cursor: not-allowed;
 }
 .lockedTechRow > .card:hover {
-  top: 0;
-  box-shadow: 0 0 black;
+	top: 0;
+	box-shadow: 0 0 black;
 }
 .lockedTechRow > .card:hover::before {
-  top: -55px;
+	top: -55px;
 }
 .lockedTechRow > .card > h1 {
-  background-color: gray;
+	background-color: gray;
 }
 .lockedTechRow > .card > .lockCont {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: radial-gradient(#f0f0f0 50%, transparent 90%);
-  border-radius: 15px;
-  z-index: 2;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: radial-gradient(#f0f0f0 50%, transparent 90%);
+	border-radius: 15px;
+	z-index: 2;
 }
 .lockedTechRow > .card > .lockCont > img {
-  position: relative;
-  top: -15px;
-  z-index: 2;
+	position: relative;
+	top: -15px;
+	z-index: 2;
 }
 
 /* MENU */
 .registerCont {
-  position: relative;
-  width: 350px;
-  height: 100%;
-  top: 0;
-  left: 0;
-  margin: 0 calc(50% - 175px);
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial;
+	position: relative;
+	width: 350px;
+	height: 100%;
+	top: 0;
+	left: 0;
+	margin: 0 calc(50% - 175px);
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	font-family: Arial;
 
-/* Glowing Text */
-  color: #fff;
-  text-shadow:
-      0 0 2px #fff,
-      0 0 7px #09ddff,
-      0 0 21px #fff,
-      0 0 42px #05ccff,
-      0 0 82px #05ccff,
-      0 0 92px #05ccff,
-      0 0 102px #05ccff,
-      0 0 151px #05ccff;
+	/* Glowing Text */
+	color: #fff;
+	text-shadow: 0 0 2px #fff, 0 0 7px #09ddff, 0 0 21px #fff, 0 0 42px #05ccff, 0 0 82px #05ccff,
+		0 0 92px #05ccff, 0 0 102px #05ccff, 0 0 151px #05ccff;
 }
 .nameCont {
-  position: relative;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: stretch;
-  width: 100%;
+	position: relative;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: stretch;
+	width: 100%;
 }
 .nameCont > h1 {
-  text-align: right;
+	text-align: right;
 }
 .nameCont > * {
-  flex: 1 1 0;
-  position: relative;
+	flex: 1 1 0;
+	position: relative;
 }
 .nameCont > input.nameField {
-  min-width: 50px;
-  padding: 0 0.5ch;
-  font-size: 2em;
-  color: inherit;
-  text-shadow: inherit;
-  background-color: transparent;
-  border: none;
+	min-width: 50px;
+	padding: 0 0.5ch;
+	font-size: 2em;
+	color: inherit;
+	text-shadow: inherit;
+	background-color: transparent;
+	border: none;
 }
 .nameCont > input.nameField:focus-visible {
-  outline: none;
+	outline: none;
 }
 .demoBtn {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 180px;
-  height: 60px;
-  padding: 10px 15px 10px 15px;
-  line-height: 1.5em;
-  font-size: 1.6em;
-  border-radius: 15px;
-  border: 3px solid #41c2dd;
-  background-color: #293d52;
-  color: inherit;
-  text-shadow: inherit;
-  cursor: pointer;
-  transition: background-color 0.5s, color 0.5s, box-shadow 0.3s, top 0.3s;
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 180px;
+	height: 60px;
+	padding: 10px 15px 10px 15px;
+	line-height: 1.5em;
+	font-size: 1.6em;
+	border-radius: 15px;
+	border: 3px solid #41c2dd;
+	background-color: #293d52;
+	color: inherit;
+	text-shadow: inherit;
+	cursor: pointer;
+	transition: background-color 0.5s, color 0.5s, box-shadow 0.3s, top 0.3s;
 }
 .demoBtn:hover {
-  background-color: #fff;
-  color: #293d52;
+	background-color: #fff;
+	color: #293d52;
 }
 .demoBtn:active {
-  top: 3px;
-  box-shadow: 0 -3px 15px #fff;
+	top: 3px;
+	box-shadow: 0 -3px 15px #fff;
 }
 
 /* GENERAL */
 .buttonCont {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 5vh;
-  z-index: 8;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 5vh;
+	z-index: 8;
 }
 .buttonCont > button {
-  cursor: pointer;
+	cursor: pointer;
+}
+
+/* QUESTS */
+#questPage {
+	/* overflow: hidden; */
+}
+
+#questPage > * {
+	opacity: 0;
+	animation: fadeIn 500ms 1 linear forwards;
+}
+
+#questPage .titleBar > h1 {
+	text-align: center;
+}
+
+#questPage .titleBar {
+	margin-top: 2rem;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+#questPage .blockMenu {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: min(3rem, 2vw);
+	margin-top: 3rem;
+}
+
+#questPage .questElement {
+	width: 18.75rem;
+	height: 14.37rem;
+	position: relative;
+	border-radius: 20px;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	justify-self: center;
+	align-self: center;
+	align-items: center;
+	background-color: wheat;
+	border: 1px black solid;
+	transition: box-shadow 200ms linear;
+}
+
+#questPage .questElement img {
+	flex-grow: 1;
+	width: 100%;
+	height: auto;
+}
+
+#questPage .questElement.blocked img {
+	width: 30%;
+	height: auto;
+}
+
+#questPage .questElement {
+	position: relative;
+	cursor: pointer;
+}
+
+#questPage .questElement:not(.blocked):hover {
+	box-shadow: 10px 10px 20px 5px gray;
+}
+
+#questPage .questElement.blocked {
+	cursor: not-allowed;
+	background-color: linear-gradient(black 80%, transparent 95%);
+}
+
+.questElemAnimation {
+	z-index: 5;
+	animation: questElementAnim 800ms 1 linear forwards;
+}
+
+.questElemAnimation::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+	opacity: 0;
+	border: 1px black solid;
+	background-color: wheat;
+	animation: questElemAnimBack 500ms 1 linear forwards;
+	animation-delay: 500ms;
+	z-index: 5;
+}
+
+.questText h3 {
+	text-align: start;
+	font-size: 1.7rem;
+	max-width: 40rem;
+	margin-top: 2rem;
+}
+
+.questModelCont {
+	width: 30rem;
+	height: 40rem;
+	margin: 2rem;
+	overflow: hidden;
+}
+
+.questModelCont > canvas {
+	width: 30rem;
+	height: 60rem;
+}
+
+.questTransitionFadeOut * {
+	opacity: 0 !important;
+	transition: opacity 200ms linear;
+}
+.questTransitionFadeIn * {
+	opacity: 1 !important;
+	transition: opacity 200ms linear;
+}
+
+.questProblemCont {
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+}
+.questText h2 {
+	font-size: 2rem;
+}
+
+.questText p {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+
+.questText {
+	margin-left: 3rem;
+	width: 40vw;
+}
+.questText button {
+	cursor: pointer;
+	padding: 0.5rem 2rem;
+	font-size: large;
+	border-radius: 10px;
+}
+.questText button:hover {
+	box-shadow: 2px 2px 0 0 black;
+	transform: translate(-2px, -2px);
+}
+.questObjetives {
+	display: flex;
+	justify-content: center;
+}
+
+.questObjetivesCont {
+	padding: 1rem;
+}
+.questObjetivesCont p {
+	font-family: cursive;
+	cursor: pointer;
+	padding: 1rem;
+	font-size: 1.4rem;
+	font-weight: 500;
+	text-align: center;
+	border: 5px gray solid;
+	border-radius: 20px;
+	width: 30rem;
+	height: 5rem;
+	background-color: white;
+	margin: 2rem;
+	transition: all 200ms linear;
+}
+.questObjetivesCont p:hover {
+	border-color: black;
+}
+
+.questObjectiveIncorrect p {
+	border-color: rgb(189, 0, 0);
+	color: red;
+
+	/* background-color: rgb(255, 145, 145); */
+}
+.questObjectiveIncorrect {
+	animation: questObjectiveIncorrectAnim 500ms 1 forwards ease-in-out;
+}
+.questObjectiveIncorrect p:hover {
+	border-color: rgb(189, 0, 0);
+}
+
+.questObjectiveCorrect {
+	animation: questObjectiveCorrectAnim 500ms 1 forwards ease-in-out;
+}
+.questObjectiveCorrect p {
+	border-color: rgb(19, 189, 0);
+	color: green;
+}
+.questObjectiveCorrect p:hover {
+	border-color: rgb(19, 189, 0);
+}
+.questObjetiveBtn {
+	transform: scaleX(0);
+	transition: transform 1s linear;
+}
+
+/* QUEST ALGORITHM */
+
+.questAlgorithm {
+	display: flex;
+	justify-content: space-around;
+}
+
+.questAlgorithmBlockCont {
+	width: 0;
+	cursor: grab;
+}
+
+.questAlgorithmTitle {
+	height: 3rem;
+}
+
+.questAlgorithmBlock {
+	display: inline-block;
+	position: absolute;
+	width: fit-content;
+	top: 0;
+	background-color: rgba(14, 199, 45, 0.715);
+	border: 1px solid black;
+	border-radius: 10px;
+	transition: box-shadow 200ms linear;
+	transition: transform 200ms linear;
+	transition: background-color 200ms linear;
+	width: 20rem;
+	height: 3.5rem;
+	text-align: center;
+}
+
+.questAlgorithmBlockActive {
+	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.447);
+	transform: scale(1.2);
+	z-index: 5;
+}
+
+.questAlgorithmListCont {
+	min-width: 30rem;
+	height: fit-content;
+}
+
+.questAlgorithmListCont > span {
+	display: block;
+	border-bottom: 2px black solid;
+}
+
+.questAlgorithm .questModelCont {
+	position: relative;
+	top: 30%;
+	transform: scale(0.4);
+	opacity: 0;
+	animation: fadeIn 1 1s linear forwards;
+}
+
+#tinkerPage .blockMenuCont {
+	position: relative;
+	width: 55px;
+	height: 100%;
+	display: inline-flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	box-shadow: 1px 0 2px black;
+}
+#questPage .blockMenuItem {
+	position: relative;
+	width: 100%;
+	height: 60px;
+	//  margin: 5px 0;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+#questPage .blockMenuItem:hover {
+	cursor: pointer;
+	background-color: #c9b6c9;
+}
+.blockMenuItemCircle {
+	position: relative;
+	width: 25px;
+	height: 25px;
+	border-radius: 25px;
+	box-shadow: inset 0 0 3px black;
+}
+.blockMenuItem > a {
+	font-size: 12px;
+	margin: 3px 0 0 0;
+}
+#questPage .blockCont {
+	position: relative;
+	width: 40rem;
+	height: 30rem;
+	padding: 0 0 0 10px;
+	display: inline-flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	overflow-y: scroll;
+	//  overflow-x: hidden;
+	box-shadow: inset 0 0 3px black;
+}
+
+.blocCodingSpace {
+	display: flex;
+}
+
+.questCodeButton {
+	cursor: pointer;
+	padding: 0.5rem 2rem;
+	font-size: large;
+	height: fit-content;
+	border-radius: 10px;
+}
+
+.questCodeButton:hover {
+	box-shadow: 2px 2px 0 0 black;
+	transform: translate(-2px, -2px);
+}
+
+.questCodeButtonCont {
+	display: flex;
+	height: 10rem;
+	justify-content: center;
+	align-items: center;
+}
+.questCongratulationsContainer {
+	display: flex;
+	justify-content: center;
+}
+.questCongratulationsBtnCont {
+	text-align: center;
+}
+.questCongratulationsBtnCont > * {
+	margin: 2rem;
+}
+.questCongratulationsBtnCont > button {
+	cursor: pointer;
+	max-width: 10rem;
+	padding: 0.5rem 2rem;
+	font-size: large;
+	height: fit-content;
+	border-radius: 10px;
+	font-weight: 700;
+}
+.questCongratulationsBtnCont > button:hover {
+	box-shadow: 2px 2px 0 0 black;
+	transform: translate(-2px, -2px);
+}
+
+@keyframes questElementAnim {
+	from {
+		transform: rotateY(0) scale(1);
+	}
+	50% {
+		transform: rotateY(90deg) scale(5);
+	}
+	to {
+		transform: rotateY(180deg) scale(15);
+	}
+}
+
+@keyframes questElemAnimBack {
+	from {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes questObjectiveIncorrectAnim {
+	from {
+		transform: rotateZ(0deg);
+	}
+	10% {
+		transform: rotateZ(-5deg);
+	}
+	20% {
+		transform: rotateZ(5deg);
+	}
+	30% {
+		transform: rotateZ(-10deg);
+	}
+	40% {
+		transform: rotateZ(10deg);
+	}
+	50% {
+		transform: rotateZ(-5deg);
+	}
+	60% {
+		transform: rotateZ(5deg);
+	}
+	70% {
+		transform: rotateZ(-2deg);
+	}
+	80% {
+		transform: rotateZ(2deg);
+	}
+	90% {
+		transform: rotateZ(-1deg);
+	}
+
+	100% {
+		transform: rotateZ(0deg);
+	}
+}
+
+@keyframes questObjectiveCorrectAnim {
+	from {
+		transform: translateY(0%) rotateZ(0deg);
+	}
+
+	50% {
+		transform: translateY(-300%) rotateZ(180deg);
+	}
+
+	to {
+		transform: translateY(0%) rotateZ(360deg);
+	}
 }

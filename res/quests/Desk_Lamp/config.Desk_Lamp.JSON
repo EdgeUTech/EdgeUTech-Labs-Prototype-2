@@ -1,53 +1,46 @@
 {
-  "title": "Desk Lamp",
-  "img": [
-    "Desk_Lamp.webp"
-  ],
-  "models": [
-    "model.Desk_Lamp.glb"
-  ],
-  "hardware": [
-    "LED",
-    "Switch"
-  ],
-  "problem": "Julian needs to finish his homework. Unfortunately, his desk lamp has stopped working. Help Julian finish his homework!",
-  "objectives": [
-    {
-      "objective": "Program a light that Julian can turn on and off.",
-      "correct": true,
-      "reason": "This will give Julian light to finish his homework. He can make it stay on as long as he needs."
-    },
-    {
-      "objective": "Program a light to stay on for 5 minutes so Julian can finish his homework.",
-      "correct": false,
-      "reason": "We don't know how long Julian will take to finish his homework. This light might turn off before he's finished!"
-    },
-    {
-      "objective": "Don't program anything so Julian can skip his homework.",
-      "correct": false,
-      "reason": "This won't help Julian finish his homework!"
-    }
-  },
-  "algorithm": [
-    {
-      "step": "Set the light to OFF"
-      "reason": "We need to make sure the light isn't on first."
-    },
-    {
-      "step": "Wait until the button is pressed."
-      "reason": "We can't ddo that just yet."
-    },
-    {
-      "step": "Turn the light on"
-      "reason": "Something needs to happen once the button is pressed."
-    },
-    {
-      "step": "Wait until the button is pressed."
-      "reason": "If we repeat now, the light will turn off as soon as it comes on."
-    },
-    {
-      "step": "Repeat"
-      "reason": ""
-    },
-  ]
+	"title": "Desk Lamp",
+	"img": ["Desk_Lamp.webp"],
+	"models": ["model.Desk_Lamp.glb"],
+	"hardware": ["LED", "Switch"],
+	"problem": "Julian needs to finish his homework. Unfortunately, his desk lamp has stopped working. Help Julian finish his homework!",
+	"objectives": [
+		{
+			"objective": "Program a light that Julian can turn on and off.",
+			"correct": true,
+			"reason": "This will give Julian light to finish his homework. He can make it stay on as long as he needs."
+		},
+		{
+			"objective": "Program a light to stay on for 5 minutes so Julian can finish his homework.",
+			"correct": false,
+			"reason": "We don't know how long Julian will take to finish his homework. This light might turn off before he's finished!"
+		},
+		{
+			"objective": "Don't program anything so Julian can skip his homework.",
+			"correct": false,
+			"reason": "This won't help Julian finish his homework!"
+		}
+	],
+	"algorithm": [
+		{
+			"step": "Set the light to OFF",
+			"reason": "We need to make sure the light isn't on first."
+		},
+		{
+			"step": "Wait until the button is pressed.",
+			"reason": "We can't do that just yet."
+		},
+		{
+			"step": "Turn the light on",
+			"reason": "Something needs to happen once the button is pressed."
+		},
+		{
+			"step": "Wait until the button is pressed.",
+			"reason": "If we repeat now, the light will turn off as soon as it comes on."
+		},
+		{
+			"step": "Repeat",
+			"reason": " This doesn't belong there"
+		}
+	]
 }

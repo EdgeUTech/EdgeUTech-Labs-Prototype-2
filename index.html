@@ -1,47 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>EdgeUTech Labs</title>
-    <meta charset="UTF-8">
-    <link rel="icon" href="./res/img/icon.webp">
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
-    <link rel="stylesheet" type="text/css" href="./css/blocks.css">
-    <script src="./js/init-scene.js"></script>
-    <script src="./js/mainFunctions.js"></script>
-  </head>
-  <body>
-    <canvas id="canvas"></canvas>
+	<head>
+		<title>EdgeUTech Labs</title>
+		<meta charset="UTF-8" />
+		<link rel="icon" href="./res/img/icon.webp" />
+		<link rel="stylesheet" type="text/css" href="./css/index.css" />
+		<link rel="stylesheet" type="text/css" href="./css/blocks.css" />
+		<script src="./js/init-scene.js"></script>
+		<script src="./js/mainFunctions.js"></script>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
 
-    <div class="buttonCont">
-      <button onclick="change('menu')">Menu</button>
-      <button onclick="change('explore')">Explore</button>
-      <button onclick="change('tinker')">Tinker</button>
-      <button onclick="change('quest')">Quest</button>
-      <button onclick="change('environment'); configEnv();">Environment</button>
-      <button onclick="change('blank')">Blank</button>
-    </div>
+		<div class="buttonCont">
+			<button onclick="change('menu')">Menu</button>
+			<button onclick="change('explore')">Explore</button>
+			<button onclick="change('tinker')">Tinker</button>
+			<button onclick="change('quest')">Quest</button>
+			<button onclick="change('environment'); configEnv();">Environment</button>
+			<button onclick="change('blank')">Blank</button>
+		</div>
 
+		<div class="page" id="nullPage"></div>
+		<div class="page" id="menuPage"></div>
+		<div class="page" id="explorePage"></div>
+		<div class="page" id="exploreActivityPage"></div>
+		<div class="page" id="tinkerPage"></div>
+		<div class="page" id="questPage"></div>
+		<div class="page" id="environmentPage"></div>
+		<div class="page" id="blankPage"></div>
 
-    <div class="page" id="nullPage"></div>
-    <div class="page" id="menuPage"></div>
-    <div class="page" id="explorePage"></div>
-    <div class="page" id="exploreActivityPage"></div>
-    <div class="page" id="tinkerPage"></div>
-    <div class="page" id="questPage"></div>
-    <div class="page" id="environmentPage"></div>
-    <div class="page" id="blankPage"></div>
-
-
-    <script src="./js/Pages/menu.js"></script>
-    <script src="./js/Pages/explore.js"></script>
-    <script src="./js/Pages/exploreActivity.js"></script>
-    <script src="./js/Pages/tinker.js"></script>
-    <script src="./js/Pages/quest.js"></script>
-    <script src="./js/Pages/environment.js"></script>
-  </body>
+		<script src="./js/Pages/menu.js"></script>
+		<script src="./js/Pages/explore.js"></script>
+		<script src="./js/Pages/exploreActivity.js"></script>
+		<script src="./js/Pages/tinker.js"></script>
+		<script src="./js/Pages/quest.js" type="module"></script>
+		<script src="./js/Pages/environment.js"></script>
+	</body>
 </html>
-
-
 
 <!-- Camera Adjustment
   -- Sliders to position the camera and see give ou coordinates so you can see where you wanna put it.
